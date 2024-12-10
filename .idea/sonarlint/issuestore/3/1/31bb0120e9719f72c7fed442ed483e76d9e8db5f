@@ -1,8 +1,0 @@
-
-	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(ş¾ÒÀşÿÿÿÿ8Š°òğº2J$5ed66ec5-997a-4d45-bbbe-280a91a4a01c
-“	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×¦ÿŠ8•ñğº2J$9b84201a-364e-4be4-aedb-456985819265
-	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ã·¿û8•ñğº2J$7b01c4b2-7cab-4d60-bc23-13a770cf7c75
-n
-java:S1172"+Remove this unused method parameter "Path".(×¦ÿŠ8••ñğº2J$5ae6eebd-b874-4a32-81a2-ec32bd193674
-h
-java:S6326"%Replace spaces with quantifier `{3}`.(şŸ‰á8¦°òğº2J$8928699a-0f31-4317-b8c8-33250da3ffa5
