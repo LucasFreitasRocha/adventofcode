@@ -3,11 +3,12 @@ package io.github.lucasfreitasrocha.service;
 import io.github.lucasfreitasrocha.util.FileService;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 
-public class DayOneService {
+public class DayOneService implements ProcessLine{
     private final FileService fileService;
+    private List<Integer> listLeft;
+    private List<Integer> listRight;
 
     public DayOneService(FileService fileService) {
         this.fileService = fileService;
@@ -26,7 +27,6 @@ public class DayOneService {
     public Integer partTwo(String path) throws IOException {
         Lists lists = buildAndSort(path);
         Integer total = 0;
-
         for(var i = 0; i < lists.left().size() ; i ++){
             int valueLeft = lists.left.get(i);
             int howManyTimes = 0;
@@ -41,16 +41,9 @@ public class DayOneService {
     }
 
     private Lists buildAndSort(String path) throws IOException {
-        InputStream inputStream =  fileService.getFile(path);
-        List<Integer> listLeft = new ArrayList<>();
-        List<Integer> listRight = new ArrayList<>();
-        try(Scanner scanner = new Scanner(inputStream)) {
-            while (scanner.hasNextLine()) {
-                String[] line = scanner.nextLine().split("   ");
-                listLeft.add(Integer.valueOf(line[0]));
-                listRight.add(Integer.valueOf(line[1]));
-            }
-        }
+        listLeft = new ArrayList<>();
+        listRight = new ArrayList<>();
+        fileService.readFile(path, this::process);
         if(listLeft.size() != listRight.size()){
             throw new RuntimeException("the list has different size");
         }
@@ -58,6 +51,13 @@ public class DayOneService {
         Collections.sort(listRight);
         Lists result = new Lists(listLeft, listRight);
         return result;
+    }
+
+    @Override
+    public void process(String line) {
+        String[] lineSplit = line.split("   ");
+        listLeft.add(Integer.valueOf(lineSplit[0]));
+        listRight.add(Integer.valueOf(lineSplit[1]));
     }
 
     private record Lists(List<Integer> left, List<Integer> right) {
