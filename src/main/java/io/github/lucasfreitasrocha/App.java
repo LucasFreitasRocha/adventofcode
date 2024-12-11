@@ -14,7 +14,13 @@ public class App {
 //        System.out.println(dayOneService.partTwo("src/main/resources/dayOne/test.txt"));
 
         DayTwoService dayTwoService = new DayTwoService(new FileService());
+        System.out.println("part 1");
         System.out.println(dayTwoService.partOne("%sDayTwo/test.txt".formatted(path)));
         System.out.println(dayTwoService.partOne("%sDayTwo/input.txt".formatted(path)));
+        System.out.println("________________________________________________________________________");
+        System.out.println("part 2");
+        System.out.println(dayTwoService.partTwo("%sDayTwo/test.txt".formatted(path)));
+        System.out.println(dayTwoService.partTwo("%sDayTwo/input.txt".formatted(path)));
+        System.out.println("________________________________________________________________________");
     }
 }
