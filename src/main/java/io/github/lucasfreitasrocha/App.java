@@ -27,6 +27,12 @@ public class App {
 //        System.out.println(dayThreeService.partTwo("%sDayThree/input.txt".formatted(path)));
 
         DayFourService dayFourService = new DayFourService(new FileService());
-        System.out.println("My solution: " + dayFourService.partOne("%sDayFour/input.txt".formatted(path)));
+        System.out.println("My solution: " + dayFourService.partOne("%sDayFour/test.txt".formatted(path), true));
+        System.out.println("My solution: " + dayFourService.partOne("%sDayFour/input.txt".formatted(path), false));
+
+        System.out.println("------------- part 2 -------------------------------------");
+        System.out.println("My solution: " + dayFourService.partTwo("%sDayFour/test.txt".formatted(path), true));
+        System.out.println("My solution: " + dayFourService.partTwo("%sDayFour/input.txt".formatted(path), false));
+
     }
 }
