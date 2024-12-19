@@ -1,8 +1,7 @@
 package io.github.lucasfreitasrocha;
 
 
-import io.github.lucasfreitasrocha.service.DayThreeService;
-import io.github.lucasfreitasrocha.service.DayTwoService;
+import io.github.lucasfreitasrocha.service.DayFourService;
 import io.github.lucasfreitasrocha.util.FileService;
 
 import java.io.IOException;
@@ -24,7 +23,10 @@ public class App {
 //        System.out.println(dayTwoService.partTwo("%sDayTwo/input.txt".formatted(path)));
 //        System.out.println("________________________________________________________________________");
 
-        DayThreeService dayThreeService = new DayThreeService(new FileService());
-        System.out.println(dayThreeService.partTwo("%sDayThree/input.txt".formatted(path)));
+//        DayThreeService dayThreeService = new DayThreeService(new FileService());
+//        System.out.println(dayThreeService.partTwo("%sDayThree/input.txt".formatted(path)));
+
+        DayFourService dayFourService = new DayFourService(new FileService());
+        System.out.println("My solution: " + dayFourService.partOne("%sDayFour/input.txt".formatted(path)));
     }
 }
